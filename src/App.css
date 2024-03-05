@@ -1,0 +1,39 @@
+/* General Body Styles */
+body.dark-mode {
+  background-color: #121212; /* Dark background */
+  color: #e4e4e4; /* Light text */
+}
+
+/* Carousel Styles */
+.carousel-center {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-item {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Card Styles */
+.card.dark-mode {
+  background-color: #242424;
+  color: #e4e4e4;
+}
+
+/* Hover Effects */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand-img {
+  padding-right: 30px;
+}
