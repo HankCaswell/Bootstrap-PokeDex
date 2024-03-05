@@ -28,7 +28,7 @@ function App() {
         try {
           const response = await axios.get(`https://pokeapi.co/api/v2/generation/${generation}`);
           const speciesList = response.data.pokemon_species;
-          console.log(speciesList)
+          // console.log(speciesList)
 
         // Fetch details for each Pokemon species, do the .catch within the map so an individual error doesn't hold up the whole thing. 
         const speciesDetailsPromises = speciesList.map(species => axios.get(`https://pokeapi.co/api/v2/pokemon/${species.name}`)
@@ -60,7 +60,7 @@ function App() {
 
   return (
     <>
-    <TopNavbar onGenerationChange={handleGenerationChange} />
+    <TopNavbar onGenerationChange={handleGenerationChange} onSelectPokemon={onSelectPokemon} />
     <Container fluid='lg' className='mt-3'>
       <Row className='justify-content-center'>
         <Col xs={12}>
@@ -80,22 +80,7 @@ function App() {
         </Row>
       )}
     </Container>
-    {/* <div className='container'>
-      <h1>PokeDex</h1>
-     */}
-      {/* <PokemonSearch onSelectPokemon={onSelectPokemon} /> */}
-      {/* <div>
-      {selectedPokemon && <PokemonDetails pokemon={selectedPokemon} />}
-      </div> */}
 
-
-      {/* Render the pokemon sprites and names, have to do the filter to ensure that we don't try to render pokemon data that can't be pulled (pokemon with multiple forms is an issue because the API call isn't simply the name it's like 'deoxys-speed-form') */}
-      {/* <div className='carousel-container'>
-      <PokemonCarousel pokemonData={pokemonData} onSelectPokemon={onSelectPokemon} /> */}
-      
-      {/* </div>
-    </div>
-     */}
     </>
   )
 }

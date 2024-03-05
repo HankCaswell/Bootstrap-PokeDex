@@ -7,6 +7,7 @@ const PokemonSearch = ({ onSelectPokemon }) => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
+    console.log(onSelectPokemon)
     try {
       const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${search.toLowerCase()}`);
       onSelectPokemon(response.data); // Pass the fetched Pokémon data to the parent component
